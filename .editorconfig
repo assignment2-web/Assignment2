@@ -1,0 +1,11 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontFamily": "Inconsolata",
+    "editor.fontSize": 14,
+    "files.autoSave": "off",
+    "php.validate.executablePath": "/opt/lampp/bin/php",
+    "vsicons.dontShowNewVersionMessage": true,
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Seti Monokai",
+    "workbench.iconTheme": "seti"
+}

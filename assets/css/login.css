@@ -1,0 +1,63 @@
+#logo {
+ 	height: 30px;	
+ }
+ .header{
+ 	padding: 5px 20px;
+ }
+.title{
+	display: inline-block;
+	margin-left: 15px;
+}
+.login-body{
+	padding-left: 0;
+}
+.sign-in-other{
+    width: 100%;
+    border: none;
+    height: 35px;
+    background: rgb(253,127,49);
+}
+.sign-in-other:focus{
+	outline: none;
+}
+#sign-in-fb{
+	background: rgb(59,89,152);
+}
+#sign-in-fb:hover{
+	background: rgb(47,71,122);
+}
+#sign-in-gg{
+	background: rgb(220,74,56);
+}
+#sign-in-gg:hover{
+	background: rgb(231,31,30);
+}
+
+#email, #pwd {
+	width: 100%;
+}
+.form-control {
+	width: 100%;
+}
+.log-in{
+	width: 100%;
+	height: 40px;
+	background-color: rgb(253,127,49);
+	border: rgb(255,94,0);
+}
+.log-in:hover{
+	background-color: rgb(255,94,0);
+}
+.log-in:focus{
+	outline: none;
+	background: rgb(255,94,0);
+}
+
+div.col-md-4 {
+	border: 1px solid #4d004d;
+	padding: 10px;
+	background-color: #ffe6ff;
+}
+#contain, #login_button{
+	padding: 5px;
+}

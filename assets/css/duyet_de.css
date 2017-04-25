@@ -1,0 +1,146 @@
+#list ul{
+  padding-left: 0px;
+  background: #737373;
+}
+
+#list span{
+  font-size: 30px;
+  margin-right: 15px;
+}
+
+#list ul a {
+  position: relative;
+  display: block;
+  padding: 15px 15px 17px 50px;
+  color: #fff;
+  border-bottom: 1px solid #737373;
+  font-size: 17px;
+  border-bottom:  2px solid #999999;
+}
+
+div.col-md-3 {
+  background-color: #737373;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#list ul a:hover{
+  background: #999999;
+  width: 100%;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#title{
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.navbar.navbar-inverse {
+  margin-bottom: 0px;
+}
+
+div.col-md-3{
+  background-color: #737373;
+}
+
+div.col-md-9 hr { 
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1.5px;
+} 
+
+table {
+  font-family: arial;
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table { 
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  font-weight: normal;
+  font-size: 16px;
+  padding: 8px 15px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: middle;
+  border-top: 1px solid #dddddd;
+}
+.table thead th {
+  background: #eeeeee;
+  vertical-align: bottom;
+  font-weight: bold;
+}   
+.table tbody > tr:nth-child(odd) > td,
+.table tbody > tr:nth-child(odd) > th {
+  background-color: #fafafa;
+}    
+.table .t-small {
+  width: 5%;
+}
+.table .t-medium {
+  width: 12%;
+}
+
+.table .t-large {
+  width: 25%;
+}
+.table .t-status {
+  font-weight: bold;
+}
+.table .t-active {
+  color: #46a546;
+}
+.table .t-inactive {
+  color: #e00300;
+}
+.table .t-disible {
+  color: #f89406;
+}
+
+.name {
+  color: #002699;
+  font-weight: lighter;
+}
+
+/* Small Sizes */
+@media (max-width: 480px) { 
+  .table-action thead {
+    display: none;
+  }
+  .table-action tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  .table-action td {
+    border: 0;
+  }
+  .table-action td:not(:first-child) {
+    display: block;
+  }
+}
+
+ul.pager{
+  margin-bottom:  5px;
+}
+.container {
+  background-color: #737373;
+}
+
+#cot2{
+  background-color: white;
+}
+.glyphicon.glyphicon-wrench{
+  font-size: 25px;
+}

@@ -1,0 +1,362 @@
+                                                            button:focus {
+                                                    outline: 0;
+                                                }
+                                                
+                                                button:active {
+                                                    outline: none;
+                                                    border: none;
+                                                }
+                                                /*HEADER*/
+                                                
+                                                .main-page {
+                                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                                }
+                                                
+                                                .header-page {
+                                                    padding-top: 5px;
+                                                }
+                                                
+                                                .header-page,
+                                                #myNavbar,
+                                                nav,
+                                                .navbar-inverse {
+                                                    background-color: #3d4752;
+                                                }
+                                                
+                                                .nav-custom {
+                                                    border: 0;
+                                                    margin: 15px;
+                                                    min-height: 1px;
+                                                }
+                                                
+                                                .title-page {
+                                                    margin: 5px;
+                                                }
+                                                
+                                                .title-page a {
+                                                    text-decoration: none;
+                                                    cursor: pointer;
+                                                    color: #FFF;
+                                                    text-transform: uppercase;
+                                                }
+                                                
+                                                .title-page a:hover {
+                                                    /*text-shadow: 1px 1px 1px black, 0 0 1em blue, 0 0 0.2em darkblue;*/
+                                                }
+                                                
+                                                .navbar-inverse .navbar-nav>li>a {
+                                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                                    text-transform: uppercase;
+                                                }
+                                                
+                                                .signin {
+                                                    border: 1px solid #eeeeee;
+                                                    border-radius: 4px;
+                                                }
+                                                
+                                                .userInfo {
+                                                    border-left: #707e8d solid 1px;
+                                                }
+                                                
+                                                .icon-bar {
+                                                    background-color: #5B5C60;
+                                                }
+                                                
+                                                .navbar-toggle:hover {
+                                                    box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+                                                }
+                                                
+                                                .navbar-toggle {
+                                                    border: 1px solid #eeeeee;
+                                                    border-radius: 5px;
+                                                }
+                                                /*END HEADER*/
+                                                
+                                                body {
+                                                    background-color: #eee;
+                                                }
+                                                
+                                                .main-content {
+                                                    margin-top: 80px;
+                                                }
+                                                
+                                                .book-item .img-book-thumb {
+                                                    =======/*
+-------------------------------------------BOOK - BOOK GRID---------------------------------
+*/
+                                                    .book-item .img-book-thumb {
+                                                        >>>>>>>7e772a3e8bfa0b5e120ea21abc9f129821db023d width: 220px;
+                                                        height: 178px;
+                                                    }
+                                                    <<<<<<< HEAD .book-item .book-title {
+                                                        color: #222222;
+                                                        font-size: 14px;
+                                                    }
+                                                    .book-item .book-author {
+                                                        =======.book-grid .book-item .book-title {
+                                                            color: #222222;
+                                                            font-size: 14px;
+                                                        }
+                                                        .book-grid .book-item .book-author {
+                                                            >>>>>>>7e772a3e8bfa0b5e120ea21abc9f129821db023d color: #008DD2;
+                                                            font-size: 13px;
+                                                        }
+                                                        .book-grid .book-item .divider {
+                                                            position: relative;
+                                                            border-bottom: 1px solid #E0E0E0;
+                                                            margin-bottom: 4px;
+                                                            margin-top: 4px;
+                                                        }
+                                                        .book-item .book-extra-info {
+                                                            <<<<<<< HEAD=======.book-grid .img-hover {
+                                                                -webkit-transition: all .4s ease;
+                                                                /* Safari and Chrome */
+                                                                -moz-transition: all .4s ease;
+                                                                /* Firefox */
+                                                                -o-transition: all .4s ease;
+                                                                /* IE 9 */
+                                                                -ms-transition: all .4s ease;
+                                                                /* Opera */
+                                                                transition: all .4s ease;
+                                                            }
+                                                            .book-grid .img-hover:hover {
+                                                                -webkit-backface-visibility: hidden;
+                                                                backface-visibility: hidden;
+                                                                -webkit-transform: translateZ(0) scale(1.120);
+                                                                /* Safari and Chrome */
+                                                                -moz-transform: scale(1.12);
+                                                                /* Firefox */
+                                                                -ms-transform: scale(1.12);
+                                                                /* IE 9 */
+                                                                -o-transform: translatZ(0) scale(1.120);
+                                                                /* Opera */
+                                                                transform: translatZ(0) scale(1.12);
+                                                            }
+                                                            /*-------------------------------BOOK LIST-------*/
+                                                            .book-list .img-hover img {
+                                                                -webkit-transition: all .4s ease;
+                                                                /* Safari and Chrome */
+                                                                -moz-transition: all .4s ease;
+                                                                /* Firefox */
+                                                                -o-transition: all .4s ease;
+                                                                /* IE 9 */
+                                                                -ms-transition: all .4s ease;
+                                                                /* Opera */
+                                                                transition: all .4s ease;
+                                                            }
+                                                            .book-list .img-hover :hover {
+                                                                -webkit-backface-visibility: hidden;
+                                                                backface-visibility: hidden;
+                                                                -webkit-transform: translateZ(0) scale(1.40);
+                                                                /* Safari and Chrome */
+                                                                -moz-transform: scale(1.40);
+                                                                /* Firefox */
+                                                                -ms-transform: scale(1.40);
+                                                                /* IE 9 */
+                                                                -o-transform: translatZ(0) scale(1.40);
+                                                                /* Opera */
+                                                                transform: translatZ(0) scale(1.40);
+                                                            }
+                                                            .book-list .book-item .post-info {
+                                                                padding-left: 5px;
+                                                            }
+                                                            .book-list .caption .book-title a {
+                                                                color: #008DD2;
+                                                            }
+                                                            .book-list .book-item .post-meta {
+                                                                margin-top: 8px;
+                                                            }
+                                                            .book-list .book-item .post-meta {
+                                                                margin-top: 8px;
+                                                            }
+                                                            .book-list .book-item .post-meta .item-icon {
+                                                                margin-left: 5px;
+                                                            }
+                                                            .book-list .book-item .post-meta .item-text {
+                                                                margin-left: 1px;
+                                                            }
+                                                            .book-list .post-info .post-meta span,
+                                                            .post-info .post-meta a {
+                                                                color: #aaa;
+                                                            }
+                                                            /*-------------------------------END BOOK LIST-------*/
+                                                            /*SEARCH BOX*/
+                                                            .search-box-nav {
+                                                                padding: 8px;
+                                                            }
+                                                            .dropdown.dropdown-lg .dropdown-menu {
+                                                                margin-top: -1px;
+                                                                padding: 6px 20px;
+                                                            }
+                                                            .input-group-btn .btn-group {
+                                                                display: flex !important;
+                                                            }
+                                                            .btn-group .btn {
+                                                                border-radius: 0;
+                                                                margin-left: -1px;
+                                                            }
+                                                            .btn-group .btn:last-child {
+                                                                border-top-right-radius: 4px;
+                                                                border-bottom-right-radius: 4px;
+                                                            }
+                                                            .btn-group .form-horizontal .btn[type="submit"] {
+                                                                border-top-left-radius: 4px;
+                                                                border-bottom-left-radius: 4px;
+                                                            }
+                                                            .form-horizontal .form-group {
+                                                                margin-left: 0;
+                                                                margin-right: 0;
+                                                            }
+                                                            .form-group .form-control:last-child {
+                                                                border-top-left-radius: 4px;
+                                                                border-bottom-left-radius: 4px;
+                                                            }
+                                                            @media screen and (min-width: 768px) {
+                                                                #adv-search {
+                                                                    width: 300px;
+                                                                    /*
+        margin: 0 auto;
+*/
+                                                                }
+                                                                .dropdown.dropdown-lg {
+                                                                    position: static !important;
+                                                                }
+                                                                .dropdown.dropdown-lg .dropdown-menu {
+                                                                    min-width: 300px;
+                                                                }
+                                                            }
+                                                            #book.post-info .post-meta span,
+                                                            .post-info .post-meta a {
+                                                                color: #aaa;
+                                                            }
+                                                            #book .post-info {
+                                                                padding: 12px 20px;
+                                                            }
+                                                            #book .book-list {}
+                                                            .caption .book-title a {
+                                                                color: #008DD2;
+                                                            }
+                                                            .book-list .img-hover img {
+                                                                -webkit-transition: all .4s ease;
+                                                                /* Safari and Chrome */
+                                                                -moz-transition: all .4s ease;
+                                                                /* Firefox */
+                                                                -o-transition: all .4s ease;
+                                                                /* IE 9 */
+                                                                -ms-transition: all .4s ease;
+                                                                /* Opera */
+                                                                transition: all .4s ease;
+                                                            }
+                                                            .book-list .img-hover :hover {
+                                                                -webkit-backface-visibility: hidden;
+                                                                backface-visibility: hidden;
+                                                                -webkit-transform: translateZ(0) scale(1.40);
+                                                                /* Safari and Chrome */
+                                                                -moz-transform: scale(1.40);
+                                                                /* Firefox */
+                                                                -ms-transform: scale(1.40);
+                                                                /* IE 9 */
+                                                                -o-transform: translatZ(0) scale(1.40);
+                                                                /* Opera */
+                                                                transform: translatZ(0) scale(1.40);
+                                                            }
+                                                            .book-grid .img-hover {
+                                                                -webkit-transition: all .4s ease;
+                                                                /* Safari and Chrome */
+                                                                -moz-transition: all .4s ease;
+                                                                /* Firefox */
+                                                                -o-transition: all .4s ease;
+                                                                /* IE 9 */
+                                                                -ms-transition: all .4s ease;
+                                                                /* Opera */
+                                                                transition: all .4s ease;
+                                                            }
+                                                            .book-grid .img-hover:hover {
+                                                                -webkit-backface-visibility: hidden;
+                                                                backface-visibility: hidden;
+                                                                -webkit-transform: translateZ(0) scale(1.120);
+                                                                /* Safari and Chrome */
+                                                                -moz-transform: scale(1.12);
+                                                                /* Firefox */
+                                                                -ms-transform: scale(1.12);
+                                                                /* IE 9 */
+                                                                -o-transform: translatZ(0) scale(1.120);
+                                                                /* Opera */
+                                                                transform: translatZ(0) scale(1.12);
+                                                            }
+                                                            /*END SEARCH BOX*/
+                                                            /*
+
+.list-group .item .caption{
+    margin-left: 100px;
+}
+
+/*---------------------------- TRANG CHU*/
+                                                            .home-page-top-board {
+                                                                height: 295px;
+                                                                width: 100%;
+                                                                background-repeat: no-repeat;
+                                                                background-size: 100%;
+                                                            }
+                                                            .hero-top-content {
+                                                                padding: 20px 0px;
+                                                            }
+                                                            .hero-top-content h2,
+                                                            .hero-top-content p,
+                                                            .hero-top-content h4 {
+                                                                color: #FFF;
+                                                            }
+                                                            .hero-bottom-content h4,
+                                                            .hero-bottom-content a {
+                                                                color: #FFF;
+                                                                text-decoration: none;
+                                                            }
+                                                            .fancy {
+                                                                display: block;
+                                                                line-height: 0.1;
+                                                                text-align: center;
+                                                            }
+                                                            .fancy span {
+                                                                display: inline-block;
+                                                                position: relative;
+                                                            }
+                                                            .fancy span:before,
+                                                            .fancy span:after {
+                                                                content: "";
+                                                                position: absolute;
+                                                                height: 2px;
+                                                                border-bottom: 0.5px solid #116D96;
+                                                                top: 0;
+                                                                display: block;
+                                                                width: 100%;
+                                                            }
+                                                            .fancy span:before {
+                                                                right: 100%;
+                                                                margin-right: 15px;
+                                                            }
+                                                            .fancy span:after {
+                                                                left: 100%;
+                                                                margin-left: 15px;
+                                                            }
+                                                            .category-hot-today .book-item {
+                                                                margin-top: -100px;
+                                                            }
+                                                            .category-hot-today .book-item img,
+                                                            .category-featured-top .book-item img {
+                                                                height: 255px;
+                                                            }
+                                                            .category-hot-today .book-item .thumbnail,
+                                                            .category-featured-top .book-item .thumbnail {
+                                                                height: 380px;
+                                                            }
+                                                            .category-hot-today .book-item .caption,
+                                                            .category-featured-top .book-item .caption {
+                                                                margin-top: 20px;
+                                                            }
+                                                            .category-name {
+                                                                margin: 24px 20px;
+                                                                margin-left: 24px;
+                                                            }
+                                                            .category-name a {
+                                                                text-decoration: none;
+                                                            }
