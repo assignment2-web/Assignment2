@@ -24,19 +24,22 @@
                 <li class="breadcrumb-item">Phân loại đề</li>
             </ol>
         </div>
-        <?php 
+        <?php
     $namecol = $this->data['namecol'];
     $data = $this->data['data'];
     ?>
+        <a href="<?php echo URL ?>admin/new_type" class="btn btn-success"> Thêm phân loại </a>
+
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <?php foreach($namecol as $col){ ?>
-
-                        <th class="text-center">
-                            <?php echo $col; ?>
-                        </th>
+                          <?php if($col != "data"){ ?>
+                          <th class="text-center">
+                              <?php echo $col; ?>
+                          </th>
+                          <?php }; ?>
                         <?php }; ?>
                         <th class="text-center">Tool</th>
                     </tr>
@@ -45,24 +48,26 @@
                     <?php foreach($data as $row) { ?>
                     <tr>
                         <?php foreach($namecol as $col){ ?>
-                        <?php if($col == "status") {?>
-                        <td class="text-center">
-                            <?php if($row['status'] == 0) 
-                                                {
-                                                    echo "<span style='color:red'>Không hoạt động<span>";
-                                                }
-                                            else {
-                                                echo "<span style='color:green'>Đang hoạt động<span>";
-                                            }
+                            <?php if($col != "data"){ ?>
+                          <?php if($col == "status") {?>
+                          <td class="text-center">
+                              <?php if($row['status'] == 0)
+                                                  {
+                                                      echo "<span style='color:red'>Không hoạt động<span>";
+                                                  }
+                                              else {
+                                                  echo "<span style='color:green'>Đang hoạt động<span>";
+                                              }
 
-                                        ?>
-                        </td>
-                        <?php } else { ?>
-                        <td style="    overflow: hidden;text-overflow: ellipsis;max-width: 100px;" class="text-center">
+                                          ?>
+                          </td>
+                          <?php } else { ?>
+                          <td style="    overflow: hidden;text-overflow: ellipsis;max-width: 100px;" class="text-center">
 
-                            <?php echo $row["$col"]; ?>
-                        </td>
-                        <?php }; ?>
+                              <?php echo $row["$col"]; ?>
+                          </td>
+                          <?php }; ?>
+                            <?php }; ?>
                         <?php }; ?>
                         <td class="text-center">
 

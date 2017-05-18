@@ -7,7 +7,6 @@
                 return true;
             }
             
-            
             $url = $_GET['url'];
             $url = rtrim($url, '/');
             $url = explode('/', $url);
@@ -29,15 +28,18 @@
             if(!$controller->auth()){
                 return false;
             }    
-            
-            if(isset($url[3])){
-                 $controller->{$url[1]}($url[2], $url[3]);
-            } else {
-                if (isset($url[2])) {
-                    $controller->{$url[1]}($url[2]);
+            if(isset($url[4])){
+                $controller->{$url[1]}($url[2], $url[3], $url[4]);
+            }else{
+                if(isset($url[3])){
+                    $controller->{$url[1]}($url[2], $url[3]);
                 } else {
-                    if (isset($url[1])) {
-                        $controller->{$url[1]}();
+                    if (isset($url[2])) {
+                        $controller->{$url[1]}($url[2]);
+                    } else {
+                        if (isset($url[1])) {
+                            $controller->{$url[1]}();
+                        }
                     }
                 }
             }

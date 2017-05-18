@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class=" main-page">
+    <div class=" main-page main-page-margin">
           <?php include 'views/layout/header.php' ?>
         <article>
             <div class="panel panel-default panel-question">
@@ -21,7 +21,7 @@
                 <div class="panel-body preview-question">
                     <?php foreach($this->data['data'] as $row ) { ?>
                     <section >
-                        <h4><strong><?php echo $row['question']['name'] ?> :</strong> <?php echo $row['question']['content'] ?>
+                        <h4><strong><?php echo $row['question']['name'] ?>.</strong> <?php echo $row['question']['content'] ?>
                         </h4>
                         <table>
                             <?php $alpha = 65; ?>

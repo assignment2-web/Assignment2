@@ -10,7 +10,7 @@ class LoginController extends Controller {
 
 	function index() 
 	{	
-        $this->view->type = NOT_UNDEFINE;
+        $this->view->type = UNDEFINE;
         $this->view->message = "";
 		$this->view->render('user/login');
 	}
@@ -36,8 +36,7 @@ class LoginController extends Controller {
             $this->view->redirect('home');
         }else{
 //            $this->notify->notify(ERROR_CODE, "Đăng nhập thất bại !");
-            $this->view->type = ERROR_CODE;
-            $this->view->message = "Tài khoản không tồn tại ! Vui lòng kiểm tra lại";
+            $this->response(ERROR_CODE, "Tài khoản không tồn tại hoặc sai mật khẩu! Vui lòng kiểm tra lại !");
             $this->view->render('user/login');
         }
         

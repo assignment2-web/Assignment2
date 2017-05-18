@@ -19,7 +19,7 @@
                     <li><a href="<?php echo URL ?>exam/index"><i class="fa fa-book" aria-hidden="true"></i>&nbsp; Tạo đề thi</a></li>
                     <li><a href="<?php echo URL ?>manage/index"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Quản lí đề thi</a></li>
                     <?php }; ?>
-                    <li><a href="<?php echo URL ?>guest/index"><i class="fa fa-suitcase" aria-hidden="true"></i>&nbsp;Thư viện đề thi</a></li>
+                    <li><a href="<?php echo URL ?>guest/index"><i class="fa fa-suitcase" aria-hidden="true"></i>&nbsp;Kho đề thi</a></li>
 
                 </ul>
 

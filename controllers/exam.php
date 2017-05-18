@@ -91,7 +91,7 @@ class ExamController extends AuthController {
     }
     
     function complete_exam($data){
-        $question = $this->model->getAllQuestion($data);
+        $question = $this->model->getAllQuestionShuff($data);
         $this->loadModel('home');
         $exam = $this->model->getDetailExam($data);
         $exam = $exam->fetch();
@@ -101,18 +101,19 @@ class ExamController extends AuthController {
     }
     
     function visit($id){
-        $question = $this->model->getAllQuestion($id);
+        $question = $this->model->getAllQuestionShuff($id);
         $this->loadModel('home');
         $exam = $this->model->getDetailExam($id);
         $exam = $exam->fetch();
         $this->view->data = array('exam' => $exam, 'data' => $question);
         $this->model->visitedExam($id);
+        // print_r($question);
         $this->view->render('home/detail');
         
     }
     
     function download($id){
-        $question = $this->model->getAllQuestion($id);
+        $question = $this->model->getAllQuestionShuff($id);
         $this->loadModel('home');
         $exam = $this->model->getDetailExam($id);
         $exam = $exam->fetch();

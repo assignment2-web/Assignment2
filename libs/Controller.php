@@ -5,8 +5,7 @@ class Controller {
 	function __construct() {
 		
 		$this->view = new View();
-		$this->view->type = UNDEFINE;
-		$this->view->message = "";
+		$this->view->response = array();
         Session::init();
         
 	}
@@ -27,8 +26,7 @@ class Controller {
     }
 
 	public function response($respone_code, $message){
-		$this->view->type = $respone_code;
-		$this->view->message = $message;
+		array_push($this->view->response, array('code' => $respone_code, 'message' => $message));
 	}
     
     public function loadNotify(){

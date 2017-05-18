@@ -29,7 +29,7 @@
                 </h1>
                 <div class="row">
                    <?php foreach($this->data as $data) { ?>
-                    <div class="col-xs-6 col-md-3 col-booksize ">
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-booksize ">
                         <div class="thumbnail thumbnail-book">
 
                             <div class="image-logo">
@@ -40,7 +40,7 @@
                                 <p><?php echo $data['description'] ?>
                                 </p>
                                 <p>Người tạo : <?php echo $data['username'] ?>
-                                
+
                                 </p>
                                 <p><span style="background-color:transparent; color:#3D4752">Lượt xem :  <span class="badge"><?php echo $data['view'] ?></span></span>
                                     <span style="background-color:transparent;color:#3D4752">Lượt tải :  <span class="badge"><?php echo $data['download'] ?></span></span></p>
@@ -54,7 +54,11 @@
                                     <li>
                                         <a title="Tải về !" href="<?php echo URL ?>exam/download/<?php echo $data['exam_id']; ?>"><i style="background-color:#1C2331; border-color:#1C2331"  class="fa fa-download" aria-hidden="true"></i></a>
                                     </li>
-                                    <?php }; ?>
+                                    <?php } else { ?>
+                                      <li>
+                                          <a title="Tải về !" href="<?php echo URL ?>login/index"><i style="background-color:#1C2331; border-color:#1C2331"  class="fa fa-download" aria-hidden="true"></i></a>
+                                      </li>
+                                      <?php }; ?>
                                 </ul>
                             </div>
                         </div>
@@ -70,7 +74,7 @@
                 </h1>
                 <div class="row">
                    <?php foreach($this->most as $data) { ?>
-                    <div class="col-xs-6 col-md-3 col-booksize ">
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-booksize ">
                         <div class="thumbnail thumbnail-book">
 
                             <div class="image-logo">
@@ -81,22 +85,26 @@
                                 <p><?php echo $data['description'] ?>
                                 </p>
                                 <p>Người tạo : <?php echo $data['username'] ?>
-                                
+
                                 </p>
                                <p><span style="background-color:transparent; color:#3D4752">Lượt xem :  <span class="badge"><?php echo $data['view'] ?></span></span>
                                     <span style="background-color:transparent;color:#3D4752">Lượt tải :  <span class="badge"><?php echo $data['download'] ?></span></span></p>
-                                
+
                             </div>
                             <div class="buy-now">
                                 <ul class="list-inline">
                                     <li>
-                                        <a href="<?php echo URL ?>exam/visit/<?php echo $data['exam_id']; ?>"><i class="fa fa-eye" style="background-color:#23B5AF; border-color:#23B5AF" aria-hidden="true"></i></a>
+                                        <a href="<?php echo URL ?>guest/visit/<?php echo $data['exam_id']; ?>"><i class="fa fa-eye" style="background-color:#23B5AF; border-color:#23B5AF" aria-hidden="true"></i></a>
                                     </li>
-                                      <?php if(Session::get('loggedIn')){ ?>
+                                    <?php if(Session::get('loggedIn')){ ?>
                                     <li>
                                         <a title="Tải về !" href="<?php echo URL ?>exam/download/<?php echo $data['exam_id']; ?>"><i style="background-color:#1C2331; border-color:#1C2331"  class="fa fa-download" aria-hidden="true"></i></a>
                                     </li>
-                                    <?php }; ?>
+                                    <?php } else { ?>
+                                      <li>
+                                          <a title="Tải về !" href="<?php echo URL ?>login/index"><i style="background-color:#1C2331; border-color:#1C2331"  class="fa fa-download" aria-hidden="true"></i></a>
+                                      </li>
+                                      <?php }; ?>
                                 </ul>
                             </div>
                         </div>

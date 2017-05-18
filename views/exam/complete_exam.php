@@ -13,8 +13,8 @@
         <article>
             <div>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../index.html">BK Maker</a></li>
-                    <li class="breadcrumb-item"><a href="create_test.html">Tạo đề thi</a></li>
+                    <li class="breadcrumb-item"><a href="<?php echo URL ?>">BK Maker</a></li>
+                    <li class="breadcrumb-item"><a href="<?php echo URL ?>/exam/index">Tạo đề thi</a></li>
                     <li class="breadcrumb-item">Hoàn thành</li>
                 </ol>
             </div>
@@ -28,7 +28,7 @@
                 <div class="panel-body preview-question">
                     <?php foreach($this->data['data'] as $row ) { ?>
                     <section >
-                        <h4><strong><?php echo $row['question']['name'] ?> :</strong> <?php echo $row['question']['content'] ?>
+                        <h4><strong><?php echo $row['question']['name'] ?>. </strong> <?php echo $row['question']['content'] ?>
                         </h4>
                         <table>
                             <?php $alpha = 65; ?>

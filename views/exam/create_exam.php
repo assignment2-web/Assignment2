@@ -13,7 +13,7 @@
         <article>
             <div>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../index.html">BK Maker</a></li>
+                    <li class="breadcrumb-item"><a href="<?php echo URL ?>">BK Maker</a></li>
                     <li class="breadcrumb-item">Tạo đề thi</li>
                 </ol>
             </div>

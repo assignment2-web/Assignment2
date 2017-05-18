@@ -5,28 +5,47 @@
 
     <title>Tao de</title>
     <?php include 'views/layout/libs.php' ?>
-
+    <script>
+           function search_category(type){
+                var filter = $('#filter').val();
+                var key = $('#searchinput').val();
+                var cat = type;
+                if (!key.trim()) {
+                    window.location.href = "<?php echo URL ; ?>guest/search/" + filter + "/-1/" + cat;
+                }else{
+                    window.location.href = "<?php echo URL ; ?>guest/search/" + filter + "/'"+ key + "'/" + cat;
+                }
+                
+            }
+    </script>
 </head>
 
 <body>
-    <div class=" main-page">
+    <div class=" main-page main-page-margin">
         <?php include 'views/layout/header.php' ?>
 
         <article>
+            <div>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../index.html">BK Maker</a></li>
+                    <li class="breadcrumb-item">Kho đề thi</li>
+                </ol>
+            </div>
             <section id="search">
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span id="dropname"> 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span id="dropname"> 
                     
                     <?php if($this->data['filter'] == -1) { ?>
-                 <?php echo 'Tất cả'; ?>
-            <?php } else { ?>
-                <?php foreach($this->data['option'] as $data) { ?>
-                    <?php if($data['id'] == $this->data['filter']) { ?>
-                        <?php echo $data['name']; ?>
-                        
-                    <? break; }; ?>
-                <?php }; ?>
-            <?php } ; ?>
+                            <?php echo 'Tất cả'; ?>
+                    <?php } else { ?>
+                            <?php foreach($this->data['option'] as $data) { ?>
+                                <?php if($data['id'] == $this->data['filter']) { ?>
+                                    <?php echo $data['name']; ?>
+                                    
+                                <? break; }; ?>
+                            <?php }; ?>
+                    <?php } ; ?>
                     
                     </span> <span class="caret"></span> </a>
                     <ul class="dropdown-menu">
@@ -44,24 +63,24 @@
 
                 <form id="frm-search" action="<?php echo URL ; ?>guest/search_form" method="post">
                     <input type="hidden" name="filter" value="-1" id="filter">
-                    <input id="search-input" name="keyword" class="form-control input-lg" placeholder="Tìm kiếm " autocomplete="off" spellcheck="false" value="<?php echo $this->data['key']; ?>" autocorrect="off" tabindex="1">
+                    <input id="searchinput" name="keyword" class="form-control input-lg" placeholder="Tìm kiếm " autocomplete="off" spellcheck="false" value="<?php echo $this->data['key']; ?>" autocorrect="off" tabindex="1">
 
                 </form>
             </section>
-            <div class="content-page search-bar">
+            <div class="content-page row search-bar ">
 
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="danhmuc">
                         <h3>Sắp xếp</h3>
                         <ul>
                             <li>
-                                <a href="#">Theo ngày tạo</a>
+                                <a href="javascript:void(0)" onclick="search_category(0)">Theo ngày tạo</a>
                             </li>
                             <li>
-                                <a href="#">Theo tên đề thi</a>
+                                <a href="javascript:void(0)" onclick="search_category(1)">Theo tên đề thi</a>
                             </li>
                             <li>
-                                <a href="#">Theo lượt xem</a>
+                                <a href="javascript:void(0)" onclick="search_category(2)">Theo lượt xem</a>
                             </li>
                         </ul>
                     </div>
@@ -69,55 +88,54 @@
 
                 </div>
 
-                <div class="col-md-9">
+                <div class="col-md-10">
                     <div class="panel panel-default panel-search">
                         <div class="panel-heading">Kết quả tìm kiếm cho "
                             <?php echo $this->data['key'] ?>"(
-                            <?php echo count($this->data['data']); ?>)</div>
+                            <?php echo count($this->data['data']); ?>)
+                        </div>
                         <div class="panel-body">
+                                       <div class="container-hot">
+               
+                <div class="row">
+                   <?php foreach($this->data['data'] as $data) { ?>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-booksize ">
+                        <div class="thumbnail thumbnail-book">
 
-                            <div class="container-hot">
-                                <div class="row">
-                                    <?php foreach($this->data['data'] as $data) { ?>
-                                    <div class="col-xs-6 col-md-3 col-booksize ">
-                                        <div class="thumbnail thumbnail-book">
-
-                                            <div class="image-logo">
-                                                <img src="data:image;base64,<?php if(empty($data['img'])) echo $data['image_type']; else echo $data['img']; ?>" alt="img1">
-                                            </div>
-                                            <div class="caption">
-                                                <h1>
-                                                    <?php echo $data['name'] ?>
-                                                </h1>
-                                                <p>
-                                                    <?php echo $data['description'] ?>
-                                                </p>
-                                                <p>Người tạo :
-                                                    <?php echo $data['username'] ?>
-
-                                                </p>
-                                                <p><span style="background-color:transparent; color:#3D4752">Lượt xem :  <span class="badge"><?php echo $data['view'] ?></span></span>
-                                                    <span style="background-color:transparent;color:#3D4752">Lượt tải :  <span class="badge"><?php echo $data['download'] ?></span></span>
-                                                </p>
-                                            </div>
-                                            <div class="buy-now">
-                                                <ul class="list-inline">
-                                                    <li>
-                                                        <a title="Xem ngay !" href="<?php echo URL ?>guest/visit/<?php echo $data['exam_id']; ?>"><i class="fa fa-eye" style="background-color:#23B5AF; border-color:#23B5AF" aria-hidden="true"></i></a>
-                                                    </li>
-                                                    <?php if(Session::get('loggedIn')){ ?>
-                                                    <li>
-                                                        <a title="Tải về !" href="<?php echo URL ?>exam/download/<?php echo $data['exam_id']; ?>"><i style="background-color:#1C2331; border-color:#1C2331"  class="fa fa-download" aria-hidden="true"></i></a>
-                                                    </li>
-                                                    <?php }; ?>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <?php }; ?>
-                                </div>
+                            <div class="image-logo">
+                                <img src="data:image;base64,<?php if(empty($data['img'])) echo $data['image_type']; else echo $data['img']; ?>" alt="img1">
                             </div>
+                            <div class="caption">
+                                <h1><?php echo $data['name'] ?></h1>
+                                <p><?php echo $data['description'] ?>
+                                </p>
+                                <p>Người tạo : <?php echo $data['username'] ?>
 
+                                </p>
+                                <p><span style="background-color:transparent; color:#3D4752">Lượt xem :  <span class="badge"><?php echo $data['view'] ?></span></span>
+                                    <span style="background-color:transparent;color:#3D4752">Lượt tải :  <span class="badge"><?php echo $data['download'] ?></span></span></p>
+                            </div>
+                            <div class="buy-now">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a title="Xem ngay !" href="<?php echo URL ?>guest/visit/<?php echo $data['exam_id']; ?>"><i class="fa fa-eye" style="background-color:#23B5AF; border-color:#23B5AF" aria-hidden="true"></i></a>
+                                    </li>
+                                    <?php if(Session::get('loggedIn')){ ?>
+                                    <li>
+                                        <a title="Tải về !" href="<?php echo URL ?>exam/download/<?php echo $data['exam_id']; ?>"><i style="background-color:#1C2331; border-color:#1C2331"  class="fa fa-download" aria-hidden="true"></i></a>
+                                    </li>
+                                    <?php } else { ?>
+                                      <li>
+                                          <a title="Tải về !" href="<?php echo URL ?>login/index"><i style="background-color:#1C2331; border-color:#1C2331"  class="fa fa-download" aria-hidden="true"></i></a>
+                                      </li>
+                                      <?php }; ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }; ?>
+                </div>
+            </div>    
                         </div>
                     </div>
                 </div>
@@ -137,7 +155,7 @@
         }
     </script>
     <script>
-        $('#search-input').keypress(function(e) {
+        $('#searchinput').keypress(function(e) {
             if (e.which == 13) {
                 $('form#frm-search').submit();
                 return false; //<---- Add this line

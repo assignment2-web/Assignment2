@@ -22,7 +22,7 @@ $mpdf->WriteHTML($stylesheet,1);
                 <div class="panel-body preview-question">';
                     foreach($this->data['data'] as $row ) { 
                     $str .= '<section >
-                        <h4><strong> ' . $row['question']['name'] .' :</strong> ' . $row['question']['content'] . '
+                        <h4><strong> ' . $row['question']['name'] .'.</strong> ' . $row['question']['content'] . '
                         </h4>
                         <table>';
                             $alpha = 65; 

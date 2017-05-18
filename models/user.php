@@ -37,6 +37,13 @@ class User extends Model {
         );
         return $this->database->update("User", $data, $where);
     }
+
+    public function checkUser($username ){
+        $where = "`username` = {$username}";
+
+        return $this->database->select('User', $where);
+    }
+    
     
     public function getUser($id){
         $where = "`user_id` = {$id}";

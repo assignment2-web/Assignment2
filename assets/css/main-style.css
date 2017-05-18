@@ -2,7 +2,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 .header-page,
@@ -69,10 +69,11 @@ body {
     padding: 10px;
 }
 
-.navbar-toggle {
+
+/*.navbar-toggle {
     margin-right: 40px;
     margin-top: 30px;
-}
+}*/
 
 #search {
     position: relative;
@@ -745,10 +746,22 @@ body {
 }
 
 .panel-question>.panel-detail {
-    background: #F7FCFA
+    /*background: #F7FCFA*/
 }
 
 .panel-question>.panel-detail>h1,
 .panel-question>.panel-detail>p {
-    color: #3D4752;
+    color: #ffffff;
+}
+
+.signup-form input {
+    border-radius: 5px;
+}
+
+.signup-form button {
+    margin-bottom: 20px;
+}
+
+.main-page-margin {
+    margin-top: 80px;
 }

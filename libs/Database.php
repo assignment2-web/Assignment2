@@ -2,13 +2,13 @@
 
 class Database extends PDO
 {
-	
+
 	public function __construct($DB_TYPE, $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS)
 	{
 		parent::__construct($DB_TYPE.':host='.$DB_HOST.';dbname='.$DB_NAME, $DB_USER, $DB_PASS, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
 	}
-	
+
     public function select($table, $where=""){
         $conn = "";
         $select = "";
@@ -19,22 +19,22 @@ class Database extends PDO
         $sth->execute();
         return $sth;
     }
-    
+
     public function query($sql){
         $sth = $this->prepare($sql);
         $sth->execute();
         return $sth;
     }
-    
+
     public function getLastInsertId(){
         return $this->lastInsertId();
     }
-    
-    
+
+
 	public function insert($table, $data)
 	{
 		ksort($data);
-		
+
 		$fieldNames = implode('`, `', array_keys($data));
 		$fieldValues = ':' . implode(', :', array_keys($data));
         try{
@@ -49,11 +49,11 @@ class Database extends PDO
             return false;
         }
 	}
-	
+
 	public function update($table, $data, $where)
 	{
 		ksort($data);
-		
+
 		$fieldDetails = NULL;
 		foreach($data as $key=> $value) {
 			$fieldDetails .= "`$key`=:$key,";
@@ -72,5 +72,5 @@ class Database extends PDO
             return false;
         }
 	}
-	
+
 }

@@ -8,39 +8,16 @@
 </head>
 
 <body>
-    <div class=" main-page">
+    <div class=" main-page  main-page-margin">
        <?php include 'views/layout/header.php' ?>
 
-       <section>
-            <div class="col-md-offset-2 col-md-8">
-                <?php if($this->type == SUCCESS_CODE) { ?>
-                <div class="alert alert-success">
-                    <strong>Thành công !</strong>
-                    <?php echo $this->message ?>
-                </div>
-                <?php }elseif($this->type == INFO_CODE) { ?>
-                <div class="alert alert-info">
-                    <strong>Thông báo !</strong>
-                    <?php echo $this->message ?>
-                </div>
-                <?php }elseif ($this->type == WARNING_CODE) { ?>
-                <div class="alert alert-warning">
-                    <strong>Cảnh báo !</strong>
-                    <?php echo $this->message ?>
-                </div>
-                <?php } elseif($this->type == ERROR_CODE) { ?>
-                <div class="alert alert-danger">
-                    <strong>Lỗi !</strong>
-                    <?php echo $this->message ?>
-                </div>
-                <?php }; ?>
-            </div>
-        </section>
+  
         <article>
             <div class="col-md-4">
             </div>
             <form action="login_user" name="login" id="frm-validate" method="POST">
                 <div class="form-group col-md-4 login-form ">
+                 <?php include 'views/notify/notify_header.php' ?>
                     <h3>Đăng nhập</h3>
                     <div class="input-group">
                         <input type="text" id="username" name="username" class="form-control" placeholder="Swift.ios">

@@ -13,16 +13,21 @@
         <article>
             <div>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../index.html">BK Maker</a></li>
-                    <li class="breadcrumb-item"><a href="create_test.html">Tạo đề thi</a></li>
+                    <li class="breadcrumb-item"><a href="<?php echo URL ?>">BK Maker</a></li>
+                    <li class="breadcrumb-item"><a href="<?php echo URL ?>exam/index">Tạo đề thi</a></li>
                     <li class="breadcrumb-item">Chi tiết</li>
                 </ol>
             </div>
             <?php include 'views/notify/notify_header.php' ?>
             <div class="panel panel-default panel-question">
-                <form action="<?php echo URL ?>exam/update_question" method="post" name="exam_detail" id="frm-validate">
+            <?php $data = $this->data;
+                  $size = count($data);
+                  $data = $data[$this->current_index];
+            ?>
+                <form action="<?php echo URL ?>manage/update_question" method="post" name="exam_detail" id="frm-validate">
                     <input type="hidden" value="<?php echo $this->exam_id?>" name="exam_fk">
                     <input type="hidden" value="<?php echo $this->current_index?>" name="index">
+                    <input type="hidden" value="<?php echo $data['question']['question_id'];?>" name="question_id">
                     <div class="panel-body">
                         <div class="fixed-action">
                             <a id="fab" data-toggle="tooltip"><span class="glyphicon glyphicon-pencil fab"> </span></a>
@@ -34,7 +39,7 @@
                         </div>
                         <div id="content">
                             <div class="question-header text-center">
-                                <h1><?php echo $this->data['question']['name']; ?>
+                                <h1>Câu hỏi <?php echo $data['question']['name']; ?>
                                 </h1>
                                 <p>
                                     <span>Câu hỏi phải có ít nhất 2 đáp án</span>
@@ -46,14 +51,14 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="name">Nội dung câu hỏi ? <sup style="color: red;"> (*) </sup> </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="name" name="name" value="<?php echo $this->data['question']['content']; ?>" placeholder="Nội dung câu hỏi ?">
+                                        <input type="text" class="form-control" id="name" name="name" value="<?php echo $data['question']['content']; ?>" placeholder="Nội dung câu hỏi ?">
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="point">Điểm <sup style="color: red;"> (*) </sup> </label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" name="point" value="<?php echo $this->data['question']['point']; ?>" style="width: 100px;" id="point" value="1">
+                                        <input type="number" class="form-control" name="point" value="<?php echo $data['question']['point']; ?>" style="width: 100px;" id="point" value="1">
                                     </div>
                                 </div>
                                 <hr>
@@ -63,23 +68,23 @@
                                 <div class="form-group row">
                                     <label class="control-label col-sm-2" for="correct-question"> Đáp án đúng </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="correctquestion" value="<?php echo $this->data['answer']['correct']['content']; ?>" id="correct-question">
+                                        <input type="text" class="form-control" name="correctquestion" value="<?php echo $data['answer']['correct']['content']; ?>" id="correct-question">
                                     </div>
                                 </div>
                                 <?php $i = 1 ?>
-                                 <input type="hidden" value="<?php echo count($this->data['answer']['incorrect']); ?>" id="size-answer" />
-                                <?php foreach($this->data['answer']['incorrect'] as $data ) {?>
-                                    <hr>
-                                    <div class="form-group">
+                                 <input type="hidden" value="<?php echo count($data['answer']['incorrect']); ?>" id="size-answer" />
+                                <?php foreach($data['answer']['incorrect'] as $da ) {?>
+                                    <hr id="hr<?php echo $i ; ?>">
+                                    <div class="form-group" id="incorrect-header<?php echo $i ; ?>">
                                         <h2 class=" col-sm-4 col-sm-offset-2 text-left">Đáp án sai <?php echo $i; ?></h2>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="control-label col-sm-2" for="incorrect-question"> Đáp án sai <?php echo $i; ?></label>
+                                    <div class="form-group row" id="incorrect-row<?php echo $i ; ?>">
+                                        <label class="control-label col-sm-2" for="incorrect-question<?php echo $i ; ?>"> Đáp án sai <?php echo $i; ?></label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="incorrectquestion[]" id="incorrect-question" value="<?php echo $data['content']; ?>" required>
+                                            <input type="text" class="form-control" name="incorrectquestion[]" id="incorrect-question<?php echo $i ; ?>" value="<?php echo $da['content']; ?>" required>
                                         </div>
                                     </div>
-                                <?php }; ?>
+                                <?php $i++;}; ?>
 
                             </div>
                             <div class="form-horizontal">
@@ -100,7 +105,18 @@
 
                     </div>
                     <div class="panel-footer clearfix">
-                        <button type="submit" id="submit" class="btn btn-primary btn-style pull-right"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Thêm câu hỏi</button>
+                        <ul class="pagination pull-right">
+                            <?php for($i = 0; $i < $size; $i++){ ?>
+                                <?php if($i == $this->current_index) { ?>
+                                    <li class="active"><a href="<?php echo URL; ?>/manage/pager/<?php echo $this->exam_id; ?>/<?php echo $i; ?>"> <?php echo $i + 1; ?></a></li>
+                                <?php } else { ?>
+                                    <li ><a href="<?php echo URL; ?>/manage/pager/<?php echo $this->exam_id; ?>/<?php echo $i; ?>"> <?php echo $i + 1; ?></a></li>
+                                <?php }; ?>
+                            <?php }; ?>
+                        </ul>
+                        <a href="#" class="btn btn-primary btn-style pull-left"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Thêm câu hỏi</a>
+                        <button type="submit" name="action" value="delete" class="btn btn-danger btn-style pull-left"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Xóa câu hỏi</button>
+                        <button type="submit" name="action" value="update" id="submit" class="btn btn-success btn-style pull-left"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Lưu câu hỏi</button>
                     </div>
                 </form>
             </div>

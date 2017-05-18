@@ -8,61 +8,31 @@
 </head>
 
 <body>
-    <div class=" main-page">
+    <div class=" main-page main-page-margin" >
      <?php include 'views/layout/header.php' ?>
         <article>
-
-            <div class="panel panel-default panel-list">
-                <div class="panel-heading ">
-                    <h1>Đăng kí thành viên</h1>
-                </div>
+            <div class="col-md-4">
+                        </div>
                 <form action="<?php echo URL ?>user/add" id="frm-validate" name="signin" method="POST">
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label for="fullname">Họ và tên<sup style="color: red;"> (*) </sup></label>
-                            <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Nguyễn Văn A">
-                        </div>
-                        <div class="form-group">
-                            <label for="username">Tên đăng nhập<sup style="color: red;"> (*) </sup></label>
-                            <input type="text" class="form-control" name="username" id="username"  placeholder="Tên đăng nhập">
+                       <div class="form-group col-md-4 login-form signup-form">
+                        <?php include 'views/notify/notify_header.php' ?>
+                         <h3>Đăng Kí</h3>
+                        <div class="input-group">
+        
+                                <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Nguyễn Văn A">
                             
-                        </div>
-                        <div class="form-group">
-                            <label for="userpwd">Mật khẩu<sup style="color: red;"> (*) </sup></label>
-                            <input type="password" class="form-control" name="userpwd" id="userpwd" placeholder="Mật khẩu">
+                                <input type="text" class="form-control" name="username" id="username"  placeholder="Tên đăng nhập">
+                        
+                                <input type="password" class="form-control" name="userpwd" id="userpwd" placeholder="Mật khẩu">
 
-                        </div>
-                        <div class="form-group">
-                            <label for="userrepwd">Xác nhận lại mật khẩu<sup style="color: red;"> (*) </sup></label>
-                            <input type="password" class="form-control" id="userrepwd" placeholder="Nhập lại mật khẩu">
+                                <input type="password" class="form-control" id="userrepwd" placeholder="Nhập lại mật khẩu">
 
+                                <input type="email" class="form-control" name="useremail" id="useremail" placeholder="nhat@gmail.com">
                         </div>
-                        <div class="form-group">
-                            <label for="useremail">Địa chỉ email<sup style="color: red;"> (*) </sup></label>
-                            <input type="email" class="form-control" name="useremail" id="useremail" placeholder="nhat@gmail.com">
-
-                        </div>
-                        <div class="form-group">
-                            <label for="userwork">Nghề nghiệp</label>
-                            <select class="form-control" id="userwork" name="userwork">
-                                    <option value="0">Giáo viên</option>
-                                    <option value="1">Học sinh</option>
-                                    <option value="2">Sinh viên</option>
-                                    <option value="3">Khác ...</option>
-                                </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="note">Giới thiệu vài nét về bản thân</label>
-                            <textarea class="form-control" name="note" id="note" rows="3"></textarea>
-                        </div>
-
-                    </div>
-                    <div class="panel-footer">
                         <button type="submit" id="submit" class="btn btn-primary btn-style">Đăng kí ngay</button>
                     </div>
                 </form>
-            </div>
+            
         </article>
         <?php include 'views/layout/footer.php' ?>
     </div>

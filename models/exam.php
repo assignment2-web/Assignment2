@@ -50,6 +50,22 @@ class Exam extends Model{
 //        print_r($question);
         return $question;
     }
+
+    public function getAllQuestionShuff($examId,$shuffle = false){
+        $where = "`exam_fk` = {$examId}";
+        $result = $this->database->select('Question', $where);
+        $count = $result->rowCount();
+        $question = array();
+        if($count > 0){
+            while ($row = $result->fetch()) {
+                $anwser = $this->getAllAnswerShuff($row['question_id'], $shuffle);
+                array_push($question, array('question' => $row , 'answer' => $anwser));
+            }
+        }
+        
+//        print_r($question);
+        return $question;
+    }
     
     public function getExam($examId){
          $where = "`exam_id` = {$examId}";
@@ -147,6 +163,18 @@ class Exam extends Model{
         return $anwser;
     }
     
+    public function getAllAnswerShuff($questionId, $shuffle = false){
+        $where = "`question_fk` = {$questionId}";
+        $result = $this->database->select('Answer', $where);
+        $count = $result->rowCount();
+        $anwser = array();
+        if($count > 0){
+            while ($row = $result->fetch()) {
+                array_push($anwser, $row);
+            }
+        }
+        return $anwser;
+    }
     
     public function deleteQuestion($questionId){
         $data = array(
